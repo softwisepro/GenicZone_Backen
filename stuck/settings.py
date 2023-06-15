@@ -83,15 +83,10 @@ WSGI_APPLICATION = 'stuck.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgres://default:e2pEcZxOhr4J@ep-cold-union-024725-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb',
-        'NAME': 'verceldb',
-        'USER': 'default',
-        'PASSWORD': 'e2pEcZxOhr4J',
-        'HOST': 'ep-cold-union-024725-pooler.us-east-1.postgres.vercel-storage.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
