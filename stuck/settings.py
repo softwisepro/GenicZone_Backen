@@ -130,8 +130,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = "/var/www/geniczone.onrender.com/static/"
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+
+MEDIA_URL = "/var/www/geniczone.onrender.com/media/"
 
 
 # Default primary key field type
