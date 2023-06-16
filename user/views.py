@@ -43,9 +43,9 @@ class RegisterView(APIView):
 #########   User Profile Views #########
 
 class UserProfileView(APIView):
-    def get(self, request, id):
+    def get(self, request, username):
         try:
-          profile = UserProfile.objects.get(id=id)
+          profile = UserProfile.objects.get(username=username)
           profile = UserPorfileSerializer(profile)
           return Response(profile.data)
         except:
