@@ -132,9 +132,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = "/var/www/geniczone.onrender.com/static/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT =  "/var/www/geniczone.onrender.com/media/"
 
-MEDIA_URL = "/var/www/geniczone.onrender.com/media/"
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type
