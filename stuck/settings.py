@@ -83,8 +83,13 @@ WSGI_APPLICATION = 'stuck.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgres://softwisepro:0UMvXorh5mU6y7fwM7TcFoo792h2YIM1@dpg-ci5qr0tgkuvgpfdnqkjg-a.oregon-postgres.render.com/geniczone',
+        'NAME': 'geniczone',
+        'USER': 'softwisepro',
+        'PASSWORD': '0UMvXorh5mU6y7fwM7TcFoo792h2YIM1',
+        'HOST': 'dpg-ci5qr0tgkuvgpfdnqkjg-a.oregon-postgres.render.com',
+        'PORT': 5432,
     }
 }
 
