@@ -4,7 +4,7 @@ from user.models import UserProfile
 
 class Pin(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=False)
+    slug = models.SlugField(unique=True)
     content = models.TextField(null=True, blank=True, max_length=255)
     image = models.FileField(default='placeholder.png', upload_to='post_uploads')
     published_date = models.DateTimeField(auto_now_add=False, auto_now=True, null=False, blank=False)
@@ -22,5 +22,9 @@ class Pin(models.Model):
     
     def number_of_likes(self):
         return self.likes.count()
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Album, self).save(*args, **kwargs)
 
     
