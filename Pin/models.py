@@ -26,6 +26,6 @@ class Pin(models.Model):
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(Album, self).save(*args, **kwargs)
+        super(Pin, self).save(*args, **kwargs)
 
     
