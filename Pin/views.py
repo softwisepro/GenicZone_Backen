@@ -7,12 +7,12 @@ from .serializers import PostSerializer
 class PostView(APIView):
     def get(self, request):
         
-      
+      try:
         pin = Pin.objects.all()
         pins = PostSerializer(pin, many=True)
         return Response(pins.data)
-      # except:
-      #   return Response({ 'error' : 'Unable to get feeds'})
+      except:
+        return Response({ 'error' : 'Unable to get feeds'})
 
 class SinglePostView(APIView):
     def get(self, request, slug):
