@@ -6,7 +6,7 @@ from user.models import UserProfile
 class Pin(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
-    content = models.TextField(null=True, blank=True, max_length=255)
+    content = models.TextField(null=True, blank=True)
     image = models.FileField(default='placeholder.png', upload_to='post_uploads')
     published_date = models.DateTimeField(auto_now_add=False, auto_now=True, null=False, blank=False)
     likes = models.ManyToManyField(User, related_name='likes')
