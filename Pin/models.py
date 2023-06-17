@@ -1,4 +1,4 @@
-import itertools
+from django.contrib import admin
 
 from django.db import models
 from stuck import settings
@@ -27,32 +27,7 @@ class Pin(models.Model):
     def number_of_likes(self):
         return self.likes.count()
     
-    def _generate_slug(self):
-        max_length = settings.BLOG_UNIQUE_SLUG_MAX_LENGTH
-        value = self.title
-        slug_candidate = slug_original = slugify(value, allow_unicode=True)[:max_length]
-        for i in itertools.count(1):
-            if not Pin.objects.filter(slug=slug_candidate).exists():
-                break
-            # Calculate the length of the candidate slug
-            # considering separator and number length
-            id_length = len(str(i)) + 1
-            new_slug_text_part_length = len(slug_original) - id_length
-            original_slug_with_id_length = len(slug_original) + id_length
-            # truncate the candidate slug text if the whole candidate slug length
-            # is greater than the Slug's database max_length
-            candidate_slug_part = slug_original[:new_slug_text_part_length] if original_slug_with_id_length > max_length else slug_original
-            slug_candidate = "{}-{}".format(candidate_slug_part, i)
-
-        self.slug = slug_candidate
-
-    def slug_length(self):
-        return len(self.slug)
-
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            self._generate_slug()
-
-        super().save(*args, **kwargs)
+    class ArticleAdmin(admin.ModelAdmin):
+        prepopulated_fields = {"slug": ("title",)}
 
     
