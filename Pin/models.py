@@ -8,7 +8,7 @@ from user.models import UserProfile
 
 class Pin(models.Model):
     title = models.CharField(max_length=settings.POST_TITLE_MAX_LENGTH)
-    slug = models.SlugField(default='', editable=False, max_length=settings.POST_UNIQUE_SLUG_MAX_LENGTH)
+    slug = models.SlugField(default='', max_length=settings.POST_UNIQUE_SLUG_MAX_LENGTH)
     content = models.TextField(null=True, blank=True)
     image = models.FileField(default='placeholder.png', upload_to='post_uploads')
     published_date = models.DateTimeField(auto_now_add=False, auto_now=True, null=False, blank=False)
