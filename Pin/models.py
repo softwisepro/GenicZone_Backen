@@ -27,7 +27,7 @@ class Pin(models.Model):
     def number_of_likes(self):
         return self.likes.count()
     
-    class PinAdmin(admin.ModelAdmin):
-        prepopulated_fields = {"slug": ("title",)}
+class PinAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
 
     
