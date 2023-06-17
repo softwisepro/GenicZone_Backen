@@ -49,4 +49,10 @@ class Pin(models.Model):
     def slug_length(self):
         return len(self.slug)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self._generate_slug()
+
+        super().save(*args, **kwargs)
+
     
