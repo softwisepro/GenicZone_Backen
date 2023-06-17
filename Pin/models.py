@@ -25,7 +25,8 @@ class Pin(models.Model):
         return self.likes.count()
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(Pin, self).save(*args, **kwargs)
+        value = self.title
+        self.slug = slugify(value, allow_unicode=True)
+        super().save(*args, **kwargs)
 
     
