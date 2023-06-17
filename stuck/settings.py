@@ -162,11 +162,11 @@ REST_FRAMEWORK = {
     )
 }
 
-cloudinary.config( 
-  cloud_name = 'dhanwmvpb', 
-  api_key = '435879159673217', 
-  api_secret = 'PNEyNzjhyfUFmy8azpwMY_s_lZM' 
-)
+cloudinary.config = {
+  "CLOUD_NAME": 'dhanwmvpb', 
+  "API_KEY": '435879159673217', 
+  "API_SSECRET": 'PNEyNzjhyfUFmy8azpwMY_s_lZM' 
+}
 
 POST_TITLE_MAX_LENGTH = 255
 POST_UNIQUE_SLUG_MAX_LENGTH = 50
