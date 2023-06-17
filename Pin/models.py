@@ -3,10 +3,11 @@ from stuck import settings
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from user.models import UserProfile
+from autoslug import AutoSlugField
 
 class Pin(models.Model):
     title = models.CharField(max_length=settings.POST_TITLE_MAX_LENGTH)
-    slug = models.SlugField(unique=True, max_length=settings.POST_UNIQUE_SLUG_MAX_LENGTH)
+    slug = AutoSlugField(populate_from='title', unique_with='published_date')
     content = models.TextField(null=True, blank=True)
     image = models.FileField(default='placeholder.png', upload_to='post_uploads')
     published_date = models.DateTimeField(auto_now_add=False, auto_now=True, null=False, blank=False)
@@ -24,5 +25,3 @@ class Pin(models.Model):
     
     def number_of_likes(self):
         return self.likes.count()
-
-    
