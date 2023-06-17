@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,7 +48,7 @@ INSTALLED_APPS = [
     'user',
     'corsheaders',
     'Pin',
-    # 'likes',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -154,6 +159,11 @@ REST_FRAMEWORK = {
     )
 }
 
+cloudinary.config({ 
+  cloud_name: 'dhanwmvpb', 
+  api_key: '435879159673217', 
+  api_secret: 'PNEyNzjhyfUFmy8azpwMY_s_lZM' 
+});
 
 POST_TITLE_MAX_LENGTH = 255
 POST_UNIQUE_SLUG_MAX_LENGTH = 50

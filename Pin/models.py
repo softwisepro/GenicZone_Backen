@@ -10,7 +10,7 @@ class Pin(models.Model):
     title = models.CharField(max_length=settings.POST_TITLE_MAX_LENGTH)
     slug = AutoSlugField(populate_from='title', unique_with='published_date')
     content = models.TextField(null=True, blank=True)
-    image = CloudinaryField(default='post_uploads/placeholder.png', upload_to='post_uploads')
+    image = CloudinaryField('image')
     published_date = models.DateTimeField(auto_now_add=False, auto_now=True, null=False, blank=False)
     likes = models.ManyToManyField(User, related_name='likes')
     updated = models.DateTimeField(auto_now=True)

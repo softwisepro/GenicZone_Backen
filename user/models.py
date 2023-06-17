@@ -7,8 +7,8 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=255, default='')
     last_name = models.CharField(max_length=255, default='')
     username = models.CharField(max_length=255, default='')
-    profile_image = CloudinaryField(default='profile.png', blank=True, null=True, upload_to='profile_uploads')
-    cover_photo = CloudinaryField(default='cover.png', blank=True, null=True, upload_to='cover_photo_uploads')
+    profile_image = CloudinaryField('profile_image')
+    cover_photo = CloudinaryField('cover_photo')
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
