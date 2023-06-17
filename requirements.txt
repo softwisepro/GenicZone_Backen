@@ -6,3 +6,5 @@ gunicorn
 psycopg2
 django-autoslug
 cloudinary
+django-cloudinary-storage
+pillow
