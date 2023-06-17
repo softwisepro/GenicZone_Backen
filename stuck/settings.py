@@ -153,3 +153,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+
+POST_TITLE_MAX_LENGTH = 255
+POST_UNIQUE_SLUG_MAX_LENGTH = 50
