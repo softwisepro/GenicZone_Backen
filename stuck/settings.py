@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'stuck.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgres://softwisepro:0UMvXorh5mU6y7fwM7TcFoo792h2YIM1@dpg-ci5qr0tgkuvgpfdnqkjg-a.oregon-postgres.render.com/geniczone',
-        'NAME': 'geniczone',
+        'URL': 'postgres://softwisepro:6hrw1fApare7Tawvf5P0u8K3OT2AyIIp@dpg-ci8bi86nqql0ldaacagg-a.oregon-postgres.render.com/geniczone_ze0f',
+        'NAME': 'geniczone_ze0f',
         'USER': 'softwisepro',
-        'PASSWORD': '0UMvXorh5mU6y7fwM7TcFoo792h2YIM1',
-        'HOST': 'dpg-ci5qr0tgkuvgpfdnqkjg-a.oregon-postgres.render.com',
+        'PASSWORD': '6hrw1fApare7Tawvf5P0u8K3OT2AyIIp',
+        'HOST': 'dpg-ci8bi86nqql0ldaacagg-a.oregon-postgres.render.com',
         'PORT': 5432,
     }
 }
@@ -162,10 +162,10 @@ REST_FRAMEWORK = {
     )
 }
 
-cloudinary.config = {
-  "CLOUD_NAME": 'dhanwmvpb', 
-  "API_KEY": '435879159673217', 
-  "API_SSECRET": 'PNEyNzjhyfUFmy8azpwMY_s_lZM' 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dhanwmvpb',
+    'API_KEY': '435879159673217',
+    'API_SECRET': 'PNEyNzjhyfUFmy8azpwMY_s_lZM',
 }
 
 POST_TITLE_MAX_LENGTH = 255
